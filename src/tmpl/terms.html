@@ -1,0 +1,51 @@
+{% load i18n %}<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+  <title>{% trans "Let Secrets Out" %} » {% trans "Terms" %}</title>
+  <link href="/css/main.css" type="text/css" rel="stylesheet"/>
+  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
+  <script src="/js/main.js" type="text/javascript"></script>
+{{ HEAD }}
+{{ config.BEFORE_HEAD_END }}
+</head>
+<body>
+{% include "topbar.html" %}
+<div id="wrap">
+{% include "header.html" %}
+<div id="content">
+<h2>{% trans "Terms" %}</h2>
+<h3>{% trans "Basic" %}</h3>
+<ul>
+<li>{% trans "Do not abuse LSO." %}</li>
+<li>{% trans "Accept any changes to the Terms without further notifications to you." %}</li>
+</ul>
+
+<h3>{% trans "Disallowed Contents" %}</h3>
+{% trans "If you submit the following contents, those contents will be deleted." %}
+<ul>
+<li>{% trans "Copyright infringement" %},</li>
+<li>{% trans "Promotion of dangerous and illegal activity" %},</li>
+<li>{% trans "Content facilitating phishing or account hijacking" %},</li>
+<li>{% trans "Commericial intentions" %},</li>
+<li>{% trans "Spams" %}.</li>
+</ul>
+
+<h3>{% trans "Submissions of Secrets" %}</h3>
+{% trans "Except the disallowed contents as described in previous section, you do not:" %}
+<ul>
+<li>{% trans "Submit content into different language which does not belong to" %}.</li>
+</ul>
+
+<h3>{% trans "Copyright of Your Contents" %}</h3>
+{% blocktrans %}
+<p>You agree to put your contents to <a href="http://en.wikipedia.org/wiki/Public_domain">Public Domain</a>.</p>
+{% endblocktrans %}
+
+</div>
+{% include "footer.html" %}
+</div>
+{{ config.BEFORE_BODY_END }}
+</body>
+</html>

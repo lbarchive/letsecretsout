@@ -1,0 +1,7 @@
+{% if messages %}
+<script type="text/javascript">
+window.lso_messages = [
+{% for msg in messages %}  ['{{ msg.0|addslashes }}', '{{ msg.1|addslashes }}']{% if not for.last %},{% endif %}{% endfor %}
+  ];
+</script>
+{% endif %}
