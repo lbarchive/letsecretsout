@@ -19,7 +19,7 @@
 <div id="content">
 <div id="secret-definition">{{ DEFS|random }}</div>
 <div>
-{% blocktrans %}Let Secrets Out ("LSO") is a place where you can post your secrets without revealing your true identity. You do not need to create an account to post a secret, in fact, you can not create one on LSO. You are forced to remain some degree of anonmity. You can also confess a sin you have committed or something.{% endblocktrans %}
+{% blocktrans %}Let Secrets Out ("LSO") is a place where you can post your secrets without revealing your true identity. You do not need to create an account to post a secret, in fact, you can not create one on LSO. You are forced to remain some degree of anonymity. You can also confess a sin you have committed or something.{% endblocktrans %}
 </div>
 
 <div id="random-secret">{% trans "Read this Random Secret" %}{% if secret %}{% blocktrans with secret.get_name as secret_name %} written by {{ secret_name }}{% endblocktrans %}{% endif %}</div>
