@@ -35,11 +35,18 @@ class HomePage(I18NRequestHandler):
 
   def get(self):
     
+    q = Secret.all()
+    q.filter('hidden =', False)
+    q.order('-published')
+    recent_secrets = q.fetch(10)
+    
     secret = Secret.get_random(self.request.LANGUAGE_CODE)
     tmpl_values = {
         # XXX
         'DEFS': self.DEFS,
         'secret': secret,
+        'recent_secrets': recent_secrets,
+        'cut_story': True,
         }
 
     render_write(tmpl_values, 'home.html', self.request, self.response)

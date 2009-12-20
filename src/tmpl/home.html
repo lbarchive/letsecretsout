@@ -6,7 +6,7 @@
   <title>{% trans "Let Secrets Out" %} » {% trans "Post your secrets anonymously and freely" %}</title>
   <meta name="description" content="{% trans 'Tell you secrets anonymously and freely, meet people who have similar experience, get help and help others.' %}"/>
   <meta name="keywords" content="{% trans 'secret, confess, confession, sharing, experience, post, discuss, bulletin, bulletin board' %}"/>
-  <link href="/css/main.css" type="text/css" rel="stylesheet"/>
+  <link href="/css/main.css?r=0" type="text/css" rel="stylesheet"/>
   <script src="http://www.google.com/jsapi" type="text/javascript"></script>
   <script src="/js/main.js" type="text/javascript"></script>
 {{ HEAD }}
@@ -22,12 +22,23 @@
 {% blocktrans %}Let Secrets Out ("LSO") is a place where you can post your secrets without revealing your true identity. You do not need to create an account to post a secret, in fact, you can not create one on LSO. You are forced to remain some degree of anonymity. You can also confess a sin you have committed or something.{% endblocktrans %}
 </div>
 
-<div id="random-secret">{% trans "Read this Random Secret" %}{% if secret %}{% blocktrans with secret.get_name as secret_name %} written by {{ secret_name }}{% endblocktrans %}{% endif %}</div>
+<div id="random-secret">
+<div class="title">{% trans "Read this Random Secret" %}{% if secret %}{% blocktrans with secret.get_name as secret_name %} written by {{ secret_name }}{% endblocktrans %}{% endif %}</div>
 {% if secret %}
 {% include "secret_item.html" %}
 {% else %}
 <div class="notice">{% trans "No random secret available!" %}</div>
 {% endif %}
+</div>
+
+<div id="recent-secrets">
+<div class="title">{% trans "Recent Secrets" %}</div>
+{% if recent_secrets %}
+{% for secret in recent_secrets %}{% include "secret_item.html" %}{% endfor %}
+{% else %}
+<div class="notice">{% trans "No secrets available!" %}</div>
+{% endif %}
+</div>
 
 </div>
 {% include "footer.html" %}

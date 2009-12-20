@@ -231,9 +231,13 @@ div.jGrowl-notification.error {
   margin-bottom: 10px;
   }
 
-#random-secret {
-  margin: 10px 0;
+#random-secret,
+#latest-secrets {
   clear: both;
+  margin: 10px 0;
+  }
+#random-secret .title,
+#recent-secrets .title {
   color: #080;
   font-family: Times New Roman;
   font-style: italic;
