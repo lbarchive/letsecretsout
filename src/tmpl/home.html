@@ -9,10 +9,15 @@
 {% endblock %}
 
 {% block content %}
-<div id="secret-definition">{{ DEFS|random }}</div>
+<div id="facebook-fanbox">
+<script type="text/javascript" src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php/en_US"></script><script type="text/javascript">FB.init("63bebd108a380b7ca2c80cfa6b69d2a6");</script><fb:fan profile_id="215858865763" stream="" connections="10" width="300"></fb:fan><div style="font-size:8px; padding-left:10px"><a href="http://www.facebook.com/pages/Let-Secrets-Out/215858865763">Let Secrets Out on Facebook</a> </div>
+</div>
+
 <div>
 {% blocktrans %}Let Secrets Out ("LSO") is a place where you can post your secrets without revealing your true identity. You do not need to create an account to post a secret, in fact, you can not create one on LSO. You are forced to remain some degree of anonymity. You can also confess a sin you have committed or something.{% endblocktrans %}
 </div>
+
+<div id="secret-definition">{{ DEFS|random }}</div>
 
 <div id="recent-secrets">
 <div class="title">{% trans "Recent Secrets" %}</div>
