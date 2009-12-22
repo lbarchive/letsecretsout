@@ -40,16 +40,31 @@ class HomePage(I18NRequestHandler):
     q.order('-published')
     recent_secrets = q.fetch(10)
     
-    secret = Secret.get_random(self.request.LANGUAGE_CODE)
     tmpl_values = {
         # XXX
         'DEFS': self.DEFS,
-        'secret': secret,
         'recent_secrets': recent_secrets,
         'cut_story': True,
         }
 
     render_write(tmpl_values, 'home.html', self.request, self.response)
+
+  def head(self):
+
+    pass
+
+
+class RandomPage(I18NRequestHandler):
+
+  def get(self):
+    
+    secret = Secret.get_random(self.request.LANGUAGE_CODE)
+    tmpl_values = {
+        # XXX
+        'secret': secret,
+        }
+
+    render_write(tmpl_values, 'random.html', self.request, self.response)
 
   def head(self):
 
@@ -69,6 +84,7 @@ class StaticPage(I18NRequestHandler):
 
 application = webapp.WSGIApplication([
     ('/', HomePage),
+    ('/random', RandomPage),
     ('/(about|terms|faq)', StaticPage),
     ],
     debug=config.DEBUG)

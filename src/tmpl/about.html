@@ -1,19 +1,9 @@
-{% load i18n %}<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-  <title>{% trans "Let Secrets Out" %} » {% trans "About" %}</title>
-  <link href="/css/main.css" type="text/css" rel="stylesheet"/>
-  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-{{ HEAD }}
-{{ config.BEFORE_HEAD_END }}
-</head>
-<body>
-{% include "topbar.html" %}
-<div id="wrap">
-{% include "header.html" %}
-<div id="content">
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "About" %}{% endblock %}
+
+{% block content %}
 <h2>{% trans "What is Let Secrets Out?" %}</h2>
 {% blocktrans %}
 <p>A place to post your secrets anonymously.</p>
@@ -36,10 +26,4 @@
 <li>{% trans '<a href="https://translations.launchpad.net/lso/trunk/+pots/django">Help translate</a> Let Secrets Out' %}</li>
 <li><a href="/faq#flag">{% trans "Flag bad contents" %}</a></li>
 </ul>
-
-</div>
-{% include "footer.html" %}
-</div>
-{{ config.BEFORE_BODY_END }}
-</body>
-</html>
+{% endblock %}

@@ -1,19 +1,9 @@
-{% load i18n %}<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
-<head>
-  <title>{% trans "Let Secrets Out" %} » {% trans "FAQ" %}</title>
-  <link href="/css/main.css" type="text/css" rel="stylesheet"/>
-  <script src="http://www.google.com/jsapi" type="text/javascript"></script>
-{{ HEAD }}
-{{ config.BEFORE_HEAD_END }}
-</head>
-<body>
-{% include "topbar.html" %}
-<div id="wrap">
-{% include "header.html" %}
-<div id="content">
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "FAQ" %}{% endblock %}
+
+{% block content %}
 <h2><a name="secret">{% trans "What is a Secret?" %}</a></h2>
 {% blocktrans %}
 <p>By dictionary definition, a secret is something kept from the knowledge of others or shared only confidentially with a few. (Merriam-Webster Online Dictionary. 2009)</p>
@@ -79,10 +69,4 @@
 <p>Please ask for the language you spoken at (TBD).</p>
 {% endblocktrans %}
 {% endcomment %}
-
-</div>
-{% include "footer.html" %}
-</div>
-{{ config.BEFORE_BODY_END }}
-</body>
-</html>
+{% endblock %}

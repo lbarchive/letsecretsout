@@ -50,8 +50,11 @@ function preview_secret() {
       tags: $('#tags').val()
       }, function(json) {
     if (json.error == 0) {
-      $("#preview").html('<div class="preview-header">' + json.preview_header + '</div>' + json.secret_preview);
+      $("#preview").empty().hide().html('<div class="preview-header">' + json.preview_header + '</div>' + json.secret_preview);
       render_gravatar();
+      $('#preview').fadeIn('slow');
+      // Scroll to preview
+      $('body')[0].scrollTop = $('#preview')[0].offsetTop;
       }
     else
       humanMsg.displayMsg(json.message, 'error')
