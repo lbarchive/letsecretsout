@@ -20,10 +20,8 @@ import Simple24 as s24
 
 class Feed(I18NRequestHandler):
 
-  def get(self, language, page):
+  def get(self, language, tag):
  
-    page = 1 if not page else int(page)
-    
     if not language:
       # TODO respond 404
       self.error(404)
@@ -34,11 +32,11 @@ class Feed(I18NRequestHandler):
 #        self.error(500)
 #        self.response.out.write('Invalid language: %s' % language)
 #        return
-      mem_key = 'feed_%s' % language
-      feed_url = '%sfeed/%s/' % (config.BASE_URI, language)
+      mem_key = 'feed_%s_%s' % (language, tag)
+      feed_url = '%sfeed/%s/%s' % (config.BASE_URI, language, tag)
     elif language == 'all':
-      mem_key = 'feed_all'
-      feed_url = '%sfeed/' % config.BASE_URI
+      mem_key = 'feed_all_%s' % tag
+      feed_url = '%sfeed/all/%s' % (config.BASE_URI, tag)
     else:
       # TODO 404
       self.error(404)
@@ -50,7 +48,7 @@ class Feed(I18NRequestHandler):
       return
 
     feed = feedgenerator.Rss201rev2Feed(
-        title=_('Let Secrets Out'),
+        title=_('Let Secrets Out'), # FIXME need language and tag
         link=config.BASE_URI,
         description=_('A place to talk about your secrets.'),
         feed_url=feed_url,
@@ -60,6 +58,8 @@ class Feed(I18NRequestHandler):
     if language != 'all':
       feed.language = language
       query.filter('language =', language)
+    if tag:
+      query.filter('tags IN', [tag])
     query.order('-published')
 
     secrets = query.fetch(config.FEED_ITEMS)
@@ -87,7 +87,7 @@ class Feed(I18NRequestHandler):
 
 
 application = webapp.WSGIApplication([
-    ('/feed/?([a-zA-Z_]*)/?([0-9]*)/?', Feed),
+    ('/feed/?([a-zA-Z_]*)/?([^/]*)/?', Feed),
     ],
     debug=config.DEBUG)
 
