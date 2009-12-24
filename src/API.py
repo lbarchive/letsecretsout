@@ -44,6 +44,7 @@ class Feed(I18NRequestHandler):
 
     raw_feed = memcache.get(mem_key)
     if raw_feed:
+      self.response.headers['Content-Type'] = 'application/rss+xml; charset=utf-8'
       self.response.out.write(raw_feed)
       return
 
@@ -74,7 +75,8 @@ class Feed(I18NRequestHandler):
           categories=secret.tags,
           )
 
-    raw_feed = feed.writeString('utf8')
+    raw_feed = feed.writeString('utf-8')
+    self.response.headers['Content-Type'] = 'application/rss+xml; charset=utf-8'
     self.response.out.write(raw_feed)
     
     # Cache it
