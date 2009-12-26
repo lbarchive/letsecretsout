@@ -223,16 +223,13 @@ div.jGrowl-notification.error {
 
 /* Miscellaneous */
 
-#facebook-fanbox {
-  float: right;
-  }
-
 #secret-definition {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   padding: 5px;
-  margin: 5px;
-  width: 280px;
+  width: 200px;
+  float: right;
+  margin-bottom: 10px;
   }
 
 #random-secret,
