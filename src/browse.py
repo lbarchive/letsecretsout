@@ -34,6 +34,7 @@ class SecretPage(I18NRequestHandler):
         self.error(403)
       else:
         template_values['secret'] =  secret
+        template_values['related_secrets'] =  secret.get_related_secrets()
     else:
       self.error(404)
 
