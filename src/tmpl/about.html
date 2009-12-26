@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "About" %}{% endblock %}
+
+{% block content %}
+<h2>{% trans "What is Let Secrets Out?" %}</h2>
+{% blocktrans %}
+<p>A place to post your secrets anonymously.</p>
+{% endblocktrans %}
+
+<h2>{% trans "Why Created This?" %}</h2>
+{% blocktrans %}
+<p>The creator is a fan of <a href="http://postsecret.blogspot.com/">PostSecret</a>, <a href="http://www.flickr.com/groups/56474392@N00/">30 SECRETS IN 30 DAYS</a>, and <a href="http://www.secrettalk.com/">Secret Talk</a>, however he have never submitted any contents to them. But he does have own secrets wanting to post and he prefers to post on own space, therefore he created LSO. One of other reasons of creation is to allow people posting in their own languages. He has also been reading the secrets on Secret Talk and he found out some commenters are rude and without compassions. He wishes LSO could become a better place. <a href="http://letsecretsout.blogspot.com/2009/11/how-this-gets-started.html">Read more...</a></p>
+{% endblocktrans %}
+
+<h2>{% trans "This Project" %}</h2>
+{% blocktrans %}
+<p>This project is created using Google App Engine, the source code can be grabbed at <a href="http://code.google.com/p/letsecretsout/">Google Code</a>. The code is based on <a href="http://i-thank.appspot.com/">I Thank</a> (a failure of the creator, no one uses) with mass modifications.</p>
+{% endblocktrans %}
+
+<h2>{% trans "Want to Help Let Secrets Out?" %}</h2>
+{% trans "There are many ways that you could help. You can:" %}
+<ul>
+<li>{% trans 'Follow @<a href="http://twitter.com/letsecretsout">letsecretsout</a>' %}</li>
+<li>{% trans '<a href="https://translations.launchpad.net/lso/trunk/+pots/django">Help translate</a> Let Secrets Out' %}</li>
+<li><a href="/faq#flag">{% trans "Flag bad contents" %}</a></li>
+</ul>
+{% endblock %}

@@ -1,0 +1,102 @@
+body {
+  background-color: #202626;
+  color: #ddd;
+  }
+
+h2,
+h2 a[name] {
+  color: #cc6666;
+  }
+
+a {
+  color: #a66;
+  }
+
+#header>.title a {
+  text-shadow: #fcc 0px 0px 2px;
+  }
+
+#header>.title a:hover {
+  color: #c33;
+  text-shadow: #fff 0px 0px 3px;
+  }
+
+.nav a {
+  text-shadow: #000 1px 1px 2px;
+  }
+
+.nav a:hover {
+  color: #0f0;
+  text-shadow: #fff 0px 0px 2px;
+  }
+
+.nav a.highlight:hover {
+  text-shadow: #fff 0px 0px 2px;
+  }
+
+/* Topbar */
+
+#topbar {
+  background-color: #ddd;
+  }
+
+#topbar a {
+  color: #000;
+  }
+
+/* Secret */
+
+.secret.even {
+  background-color: #201a20;
+  }
+
+.secret.old {
+  background-color: #20201a;
+  }
+
+.secret img.gravatar {
+  background-color: #444;
+  border: 2px solid #ddd;
+  }
+
+.secret .stuff {
+  background-color: #644;
+  }
+
+.secret .stuff .flag-button a {
+  color: #faa;
+  }
+
+.secret .stuff .read-all-button a {
+  color: #aaf;
+  }
+
+/* Miscellaneous */
+
+#secret-definition {
+  background-color: #ccc;
+  color: #000;
+  }
+
+/* Form */
+
+input, textarea {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #303636;
+  color: #ddd;
+  border: 2px solid #ccc;
+  }
+input:focus, textarea:focus {
+  border: 2px solid #88f;
+  }
+
+/* Disqus */
+.dsq-trackback-url {
+  color: #ddd;
+  }
+
+/* reCAPTCHA */
+#recaptcha_response_field {
+  color: #ddd;
+  }

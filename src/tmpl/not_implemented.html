@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Hooray! You just hit the secret of secrets!" %}{% endblock %}
+
+{% block content %}
+<div class="notice">{% trans "Shhh...! You just discover a super secret!" %}</div>
+
+<div class="secret even">
+<span class='gravatar-hash'>9c8425c85f81798109d48e30fb1d28e4</span>
+<div class="subject"><a href="#">{% trans "I am too lazy to accomplish many things" %}</a></div>
+<div class="story">{% trans "It is ashamed that I could not finish this page in time. So you read this secret, which has been buried very very deep inside of me." %}</div>
+<div class="tags">{% trans "Tagged with laziness, procrastination" %}</div>
+<div class="poster">
+{% blocktrans %}<a href="http://livibetter.mp/">livibetter</a> posted <span class="date"">long time</span> ago{% endblocktrans %}
+</div>
+<div class="stuff">
+<div class="flag-button"><a href="javascript:alert('How dare you! :-)')" class="flag">{% trans "Flag" %}</a></div>
+</div>
+</div>
+{% endblock %}

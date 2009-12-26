@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Terms" %}{% endblock %}
+
+{% block content %}
+<h2>{% trans "Terms" %}</h2>
+<h3>{% trans "Basic" %}</h3>
+<ul>
+<li>{% trans "Do not abuse LSO." %}</li>
+<li>{% trans "Accept any changes to the Terms without further notifications to you." %}</li>
+</ul>
+
+<h3>{% trans "Disallowed Contents" %}</h3>
+{% trans "If you submit the following contents, those contents will be deleted." %}
+<ul>
+<li>{% trans "Copyright infringement" %},</li>
+<li>{% trans "Promotion of dangerous and illegal activity" %},</li>
+<li>{% trans "Content facilitating phishing or account hijacking" %},</li>
+<li>{% trans "Commericial intentions" %},</li>
+<li>{% trans "Spams" %}.</li>
+</ul>
+
+<h3>{% trans "Submissions of Secrets" %}</h3>
+{% trans "Except the disallowed contents as described in previous section, you do not:" %}
+<ul>
+<li>{% trans "Submit content into different language which does not belong to" %}.</li>
+</ul>
+
+<h3>{% trans "Copyright of Your Contents" %}</h3>
+{% blocktrans %}
+<p>You agree to put your contents to <a href="http://en.wikipedia.org/wiki/Public_domain">Public Domain</a>.</p>
+{% endblocktrans %}
+{% endblock %}

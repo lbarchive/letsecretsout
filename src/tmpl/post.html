@@ -1,0 +1,88 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Post a secret" %}{% endblock %}
+
+{% block after_HEAD %}
+  <script src="/js/post.js?r=0" type="text/javascript"></script>
+{{ reCAPTCHA_THEME }}
+{% endblock %}
+
+{% block content %}
+<div class="notice">{% trans 'Make sure you have read <a href="/faq">FAQ</a> and <a href="/terms">Terms</a>,<br/> post a Secret relating to You,<br/> and it is <i>NOT</i> just for asking a Question.' %}</div>
+<form action="/post" method="post">
+<div class="field">
+<div class="field-name">{% trans "Name" %}</div>
+<div class="field-value">
+<input id="name" type="text" name="name" value="{{ name }}" maxlength="{{ config.SECRET_NAME_MAXLENGTH }}"/><br/>
+{% trans "Leave empty, all secrets will be posted as <i>Anonymous</i>." %}
+</div>
+</div>
+
+<div class="field">
+<div class="field-name full">{% trans "Gravatar email address <a href='/faq#gravatar' class='info-pin'>&#10033;</a> or Secret ID Text <a href='/faq#secretidtext' class='info-pin'>&#10033;</a>" %}</div>
+<div class="field-value">
+<input id="gravatar" type="text" name="gravatar" value="{{ gravatar }}"/><br/>
+{% trans "If you enter your Gravatar email address, you will need to get the Gravatar Check. <a href='javascript:send_gravatar_check();'>Click here</a> to send the Gravatar Check to your Gravatar email address" %}
+</div>
+</div>
+
+<div class="field">
+<div class="field-name full">{% trans "Gravatar Check" %}</div>
+<div class="field-value">
+<input id="gravatar_check" type="text" name="gravatar_check" value="{{ gravatar_check }}"/><br/>
+{% trans "Leave empty if you do not use Gravatar email address above." %}
+</div>
+</div>
+
+<div class="field">
+<div class="field-name">{% trans "Language" %}</div>
+<select id="language" name="language">
+<option>Select</option>
+{% for lang in config.VALID_LANGUAGES %}
+<option value="{{ lang.0 }}"{% ifequal language lang.0 %} selected="selected"{% endifequal %}>{{ lang.1 }}</option>
+{% endfor %}
+</select> <input type="button" onclick="detect_language()" value="Detect"/>
+</div>
+
+<div class="field">
+<div class="field-name">{% trans "Subject" %}</div><div class="counter"><span id="subject-counter"></span> / {{ config.SECRET_SUBJECT_MAXLENGTH }}</div>
+<div class="field-value full">
+<input id="subject" type="text" name="subject" value="{{ subject }}" maxlength="{{ config.SECRET_SUBJECT_MAXLENGTH }}"/>
+</div>
+</div>
+
+<div class="field">
+<div class="field-name">{% trans "Story" %}</div><div class="counter"><span id="story-counter"></span> / {{ config.SECRET_STORY_MAXLENGTH }}</div>
+<div class="field-value full">
+<textarea id="story" name="story" cols="80" rows="20">{{ story }}</textarea>
+</div>
+</div>
+
+<div class="field">
+<div class="field-name">{% trans "Tags" %}</div>{% trans "Separate with commas" %}
+<div class="field-value full">
+<input id="tags" type="text" name="tags" value="{{ tags }}"/>
+</div>
+</div>
+
+<div class="reCAPTCHA">
+{% if config.reCAPTCHA_ENABLED %}
+  <script type="text/javascript" src="{% if config.DEV %}http://api{% else %}https://api-secure{% endif %}
+.recaptcha.net/challenge?k={{ config.reCAPTCHA_PUBLIC_KEY }}"> </script>
+{% endif %}
+</div>
+
+<div class="buttons">
+<p><input class="big" type="button" value="{% trans "Preview" %}" onclick="preview_secret()"/></p>
+<p><input class="big" type="submit" value="{% trans "Post!" %}"/></p>
+</div>
+</form>
+
+<div id="notice">
+{% trans 'Please write with care, you are not allowed to edit or to delete after posting.' %}<br/>
+{% trans 'By clicking on the <i>Post!</i> button above means that you accept the <a href="/terms">Terms</a>.' %}
+</div>
+<div id="preview">
+</div>
+{% endblock %}

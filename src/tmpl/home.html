@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Post your secrets anonymously and freely" %}{% endblock %}
+
+{% block head %}
+  <meta name="description" content="{% trans 'Tell you secrets anonymously and freely, meet people who have similar experience, get help and help others.' %}"/>
+  <meta name="keywords" content="{% trans 'secret, confess, confession, sharing, experience, post, discuss, bulletin, bulletin board' %}"/>
+{% endblock %}
+
+{% block content %}
+<div id="secret-definition">{{ DEFS|random }}</div>
+<div>
+{% blocktrans %}Let Secrets Out ("LSO") is a place where you can post your secrets without revealing your true identity. You do not need to create an account to post a secret, in fact, you can not create one on LSO. You are forced to remain some degree of anonymity. You can also confess a sin you have committed or something.{% endblocktrans %}
+</div>
+
+<div id="recent-secrets">
+<div class="title">{% trans "Recent Secrets" %}</div>
+{% if recent_secrets %}
+{% for secret in recent_secrets %}{% include "secret_item.html" %}{% endfor %}
+{% else %}
+<div class="notice">{% trans "No secrets available!" %}</div>
+{% endif %}
+</div>
+{% endblock %}

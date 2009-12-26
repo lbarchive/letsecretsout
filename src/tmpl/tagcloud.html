@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }} » {% trans "Tag Cloud" %}{% endblock %}
+
+{% block head %}
+  <link rel="alternate" type="application/rss+xml" title="{% trans "RSS" %}" href="{{ feed_link }}{% if tag %}{{ tag|urlencode }}{% endif %}" />
+{% endblock %}
+
+{% block content %}
+<div class="tagcloud">
+{% if tags %}
+{% for tag in tags %}
+<a href="/tag/{{ language }}/{{ tag.name|urlencode }}" style="font-size:{{ tag.size }}em;" title="{{ tag.count }} secret{{ tag.count|pluralize}}">{{ tag.name|escape }}</a>
+{% endfor %}
+{% else %}
+<div class="notice">{% trans "No tags available!" %}</div>
+{% endif %}
+</div>
+<div class="feed"><a href="{{ feed_link }}{% if tag %}{{ tag|urlencode }}{% endif %}"><img src="/img/rss.png" title="{% trans "RSS feed" %}"/> {% trans "RSS feed" %}</a></div>
+<div class="navigation language">
+{% trans "Browse secrets in other language:" %} {% ifequal language "all" %}{% trans "All" %}{% else %}<a href="/tag/all" class="item">{% trans "All" %}</a>{% endifequal %}{% for lang in config.VALID_LANGUAGES %} {% ifequal lang.0 language %}{{ lang.1 }}{% else %}<a href="/tag/{{ lang.0 }}" class="item">{{ lang.1 }}</a>{% endifequal %}{% endfor %}
+</div>
+{% endblock %}

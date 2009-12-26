@@ -1,0 +1,16 @@
+{% load i18n ifin %}{% get_current_language as LANGUAGE_CODE %}
+<div id="header">
+<div class="title">
+<h1><a href="/">{% trans "Let Secrets Out" %}</a></h1>
+</div>
+<div class="nav">
+<a href="/about">{% trans "Abort" %}</a>
+<a href="/browse/{% ifin LANGUAGE_CODE config.KEYS_VALID_LANGUAGES %}{{ LANGUAGE_CODE }}/{% endifin %}">{% trans "Browse" %}</a>
+<a class="highlight" href="{{ config.BASE_SECURE_URI }}post">{% trans "Post a Secret" %}</a>
+<a href="/random">{% trans "Random" %}</a>
+<a href="http://letsecretsout.blogspot.com/">{% trans "Blog" %}</a>
+<a href="/faq">{% trans "FAQ" %}</a>
+<a href="/terms">{% trans "Terms" %}</a>
+</div>
+</div>
+{% include "messages.html" %}

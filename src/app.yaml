@@ -1,0 +1,77 @@
+application: letsecretsout
+version: 1
+runtime: python
+api_version: 1
+
+default_expiration: "1d"
+
+handlers:
+- url: /css
+  static_dir: css
+
+- url: /img
+  static_dir: img
+ 
+- url: /js
+  static_dir: js
+ 
+- url: /robots.txt
+  static_files: robots.txt
+  upload: robots.txt
+
+- url: /favicon.ico
+  static_files: favicon.ico
+  upload: favicon.ico
+  mime_type: image/vnd.microsoft.icon
+
+- url: /u/.*
+  script: browse.py
+- url: /\d+
+  script: browse.py
+- url: /browse.*
+  script: browse.py
+- url: /tag.*
+  script: browse.py
+- url: /flag.json
+  script: browse.py
+#
+#- url: /random.json
+#  script: API.py
+#- url: /random.rss
+#  script: API.py
+#- url: /random.txt
+#  script: API.py
+- url: /feed.*
+  script: API.py
+#
+- url: /post
+  script: post.py
+  secure: always
+- url: /preview.json
+  script: post.py
+  secure: always
+- url: /send_gravatar_check.json
+  script: post.py
+  secure: always
+#
+#- url: /stats/?
+#  script: stats.py
+#
+- url: /settings
+  script: settings.py
+  secure: always
+
+- url: /admin/?
+  script: admin.py
+  login: admin
+
+- url: /admin/.*
+  script: admin.py
+  login: admin
+
+- url: /remote_api
+  script: $PYTHON_LIB/google/appengine/ext/remote_api/handler.py
+  login: admin
+
+- url: /.*
+  script: index.py

@@ -1,0 +1,70 @@
+body {
+  background-color: #e0dada;
+  color: #000;
+  }
+
+h2,
+h2 a[name] {
+  color: #660000;
+  }
+
+a {
+  color: #66f;
+  }
+
+#header>.title a {
+  text-shadow: #000 0px 0px 2px;
+  }
+
+#header>.title a:hover {
+  color: #c33;
+  text-shadow: #400 0px 0px 3px;
+  }
+
+.nav a {
+  text-shadow: #000 1px 1px 0px;
+  }
+
+.nav a:hover {
+  color: #080;
+  text-shadow: #fff 0px 0px 1px;
+  }
+
+/* Topbar */
+
+#topbar {
+  background-color: #000;
+  }
+
+#topbar a {
+  color: #fff;
+  }
+
+/* Secret */
+
+.secret.even {
+  background-color: #cad0ca;
+  }
+
+.secret.old {
+  background-color: #cacad0;
+  }
+
+.secret img.gravatar {
+  background-color: #d0caca;
+  border: 2px solid #000;
+  }
+
+.secret .stuff {
+  background-color: #fcc;
+  }
+
+.secret .stuff .flag-button a {
+  color: #f00;
+  }
+
+/* Miscellaneous */
+
+#secret-definition {
+  background-color: #ccc;
+  }

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Random Secret" %}{% endblock %}
+
+{% block head %}
+  <meta name="description" content="{% trans 'Read a random secret' %}"/>
+  <meta name="keywords" content="{% trans 'secret, confess, confession, sharing, experience, post, discuss, bulletin, bulletin board, random' %}"/>
+{% endblock %}
+
+{% block content %}
+<div id="random-secret">
+<div class="title">{% trans "Read this Random Secret" %}{% if secret %}{% blocktrans with secret.get_name as secret_name %} written by {{ secret_name }}{% endblocktrans %}{% endif %}</div>
+{% if secret %}
+{% include "secret_item.html" %}
+{% else %}
+<div class="notice">{% trans "No random secret available!" %}</div>
+{% endif %}
+</div>
+{% endblock %}
