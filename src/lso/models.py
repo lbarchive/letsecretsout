@@ -164,6 +164,16 @@ class Secret(db.Model):
       secret = None
     return secret        
 
+  def get_related_secrets(self):
+
+    q = Secret.all()
+    q.filter('hidden =', False)
+    q.filter('__key__ !=', self.key())
+    q.filter('language =', self.language)
+    q.filter('tags IN', self.tags)
+    secrets = q.fetch(10)
+    return secrets
+
 
 class Tag(db.Model):
 
