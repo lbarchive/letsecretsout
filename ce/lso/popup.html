@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+  font-family: "Times New Roman", Serif;
+  width: 600px;
+  }
+#wrapper {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #202626;
+  color: #ddd;
+  padding: 10px;
+  }
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: #a66;
+  }
+a:hover {
+  text-decoration: underline;
+  color: #c23;
+  }
+a.button {
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  background-color: #444;
+  color: #fff;
+  padding: 1px;
+  border: 2px solid #ccf;
+  }
+a.button:hover {
+  color: #000;
+  background-color: #ccf;
+  }
+a img {
+  border: none;
+  }
+h1 {
+  margin: 0;
+  padding: 0;
+  }
+h1 a {
+  color: #b22;
+  font-family: Times;
+  text-shadow: #fcc 0px 0px 2px;
+  }
+h1 a:hover {
+  color: #c33;
+  text-decoration: none;
+  text-shadow: #fff 0px 0px 3px;
+  }
+h2 {
+  color: #393;
+  font-size: 1em;
+  font-weight: normal;
+  text-shadow: 1px 1px 0 #6c6;
+  }
+/* Secret */
+.secret {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  clear: both;
+  background-color: #401a20;
+  margin-top: 20px;
+  padding: 5px;
+  }
+.secret img.gravatar {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #444;
+  border: 2px solid #ddd;
+  padding: 2px;
+  float: right;
+  width: 48px;
+  height: 48px;
+  }
+.secret .subject a {
+  font-style: italic;
+  font-size: 1.2em;
+  }
+.secret .story {
+  clear: both;
+  height: 10em;
+  overflow: auto;
+  }
+.secret .poster {
+  text-align: right;
+  font-style: italic;
+  margin-bottom: 5px;
+  }
+/* Misc */
+.error {
+  color: #f00;
+  }
+#get_next {
+  float: right;
+  }
+</style>
+<script>
+function init() {
+  get_new_random_secret();
+  }
+function get_new_random_secret() {
+  var ele = document.getElementById('secret');
+  remove_children(ele);
+  ele.appendChild(document.createTextNode('Connecting to Let Secrets Out...'));
+
+  var xhr = new XMLHttpRequest();
+  xhr.open("GET", "http://letsecretsout.appspot.com/random.json", true);
+  xhr.send();
+  xhr.onreadystatechange = function() {
+    if (this.readyState == 4) {
+      var ele = document.getElementById('secret');
+      remove_children(ele);
+      if (this.status != 200) {
+        var error = document.createElement('div');
+        error.appendChild(document.createTextNode('Error on connecting to Let Secrets Out! Please try again later!'));
+        error.className = 'error';
+        ele.appendChild(error);
+        return;
+        }
+      
+      var resp = JSON.parse(xhr.responseText);
+      if (resp.error != 0) {
+        var error = document.createElement('div');
+        error.appendChild(document.createTextNode(resp.message));
+        error.className = 'error';
+        ele.appendChild(error);
+        return;
+        }
+      else {
+        var secret = resp.secrets[0];
+
+        var avatar = document.createElement('img');
+        avatar.src = 'http://www.gravatar.com/avatar/' + secret.gravatar_hash + '?s=48&d=http%3A%2F%2Fletsecretsout.appspot.com%2Fimg%2Favatar.png';
+        avatar.className = 'gravatar';
+        ele.appendChild(avatar);
+
+        var subject = document.createElement('div');
+        subject.className = 'subject';
+        var subject_a = document.createElement('a');
+        subject_a.href = 'http://letsecretsout.appspot.com/' + secret.id;
+        subject_a.addEventListener("click", go_evt);
+        subject_a.appendChild(document.createTextNode(secret.subject));
+        subject.appendChild(subject_a);
+        ele.appendChild(subject);
+
+        var story = document.createElement('div');
+        story.className = 'story';
+        story.innerHTML = secret.story;
+        ele.appendChild(story);
+        
+        var poster = document.createElement('div');
+        poster.className = 'poster';
+        var author_name = 'Anonymous';
+        if (secret.name)
+          author_name = secret.name;
+        poster.appendChild(document.createTextNode(author_name + ' posted ' + secret.published_ago + ' ago'));
+        ele.appendChild(poster);
+        }
+      }
+    }
+  }
+// Utilities
+function remove_children(ele) {
+  if (ele.hasChildNodes()) 
+    while (ele.childNodes.length>=1)
+      ele.removeChild(ele.firstChild);       
+  }
+function go_evt() {
+  chrome.tabs.create({url: this.href});
+  }
+function go(url) {
+  chrome.tabs.create({url: url});
+  }
+</script>
+</head>
+<body onload="init();">
+<div id="wrapper">
+<div id="get_next"><a href="#" class="button" onclick="get_new_random_secret()"/>Next &raquo;</a></div>
+<h1><a href="#" onclick="go('http://letsecretsout.appspot.com/')">Let Secrets Out</a></h1>
+<h2>A place where you can post your secrets anonymously and freely</h2>
+<div id="secret" class="secret"></div>
+<div style="text-align:center;margin-top:1em;">
+<a class="button" href="#" onclick="go('https://letsecretsout.appspot.com/post')">Go posting your secrets &raquo;</a>
+</div>
+</div>
+</body>
+</html>
+<!-- vim: set sw=2 ts=2 et ai: -->

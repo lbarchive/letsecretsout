@@ -34,9 +34,9 @@ handlers:
   script: browse.py
 - url: /flag.json
   script: browse.py
-#
-#- url: /random.json
-#  script: API.py
+
+- url: /random.json
+  script: API.py
 #- url: /random.rss
 #  script: API.py
 #- url: /random.txt

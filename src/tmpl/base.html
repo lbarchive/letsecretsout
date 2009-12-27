@@ -13,6 +13,7 @@
 {% include "topbar.html" %}
 <div id="wrap">
 {% include "header.html" %}
+{{ config.AFTER_HEADER }}
 <div id="content">
 {% block content %}{% endblock %}
 </div>

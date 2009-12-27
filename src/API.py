@@ -12,10 +12,26 @@ from django.conf import settings
 settings._target = None
 from django.utils import feedgenerator
 
+from lso.json import send_json
 from lso.models import Secret
 from lso.util import I18NRequestHandler
 import config
 import Simple24 as s24
+
+
+class RandomJSON(webapp.RequestHandler):
+
+  def get(self):
+    
+    callback = self.request.get('callback') 
+    # TODO add lang=? and number=?
+    secret = Secret.get_random('en').dictize()
+    secret['subject'] = template.Template('{{ subject|striptags }}').render(template.Context({'subject': secret['subject']}))
+    secret['story'] = template.Template('{{ story|striptags|linebreaksbr }}').render(template.Context({'story': secret['story']}))
+    secret['name'] = template.Template('{{ name|striptags }}').render(template.Context({'name': secret['name']}))
+    secret['published_ago'] = template.Template('{{ published|timesince }}').render(template.Context({'published': secret['published']}))
+    secret['published'] = template.Template('{{ published|date:"r" }}').render(template.Context({'published': secret['published']}))
+    send_json(self.response, {'secrets': [secret]}, callback)
 
 
 class Feed(I18NRequestHandler):
@@ -90,6 +106,7 @@ class Feed(I18NRequestHandler):
 
 application = webapp.WSGIApplication([
     ('/feed/?([a-zA-Z_]*)/?([^/]*)/?', Feed),
+    ('/random.json', RandomJSON),
     ],
     debug=config.DEBUG)
 

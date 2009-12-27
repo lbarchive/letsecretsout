@@ -116,17 +116,6 @@ pre {
   font-weight: bold;
   }
 
-/* Messages */
-
-div.jGrowl-notification {
-  border: 2px solid #ccc;
-  }
-  
-div.jGrowl-notification.error {
-  border: 2px solid #f00;
-  color: #f00;
-  }
-
 /* Tag Cloud */
 .tagcloud {
   text-align: center;
