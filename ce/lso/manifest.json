@@ -1,0 +1,16 @@
+{
+  "name": "Let Secrets Out",
+  "version": "0.1",
+  "description": "Read a random secret from Let Secrets Out",
+  "browser_action": {
+    "default_icon": "icon.png",
+	"default_title": "Let Secrets Out",
+	"popup": "popup.html"
+  },
+  "icons": { "48": "icon48.png",
+          "128": "icon128.png" },
+  "permissions": [
+  	"tabs",
+    "http://letsecretsout.appspot.com/*"
+  ]
+}

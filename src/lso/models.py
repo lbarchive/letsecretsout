@@ -174,6 +174,18 @@ class Secret(db.Model):
     secrets = q.fetch(10)
     return secrets
 
+  def dictize(self):
+
+    d = {
+      'id': self.key().id(),
+      'subject': self.subject,
+      'story': self.story,
+      'name': self.name,
+      'published': self.published,
+      'gravatar_hash': '' if not self.gravatar else self.get_gravatar_hash()
+      }
+    return d
+
 
 class Tag(db.Model):
 
