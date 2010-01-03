@@ -109,6 +109,7 @@ pre {
   font-size: small;
   -moz-border-radius: 0 0 0 5px;
   -webkit-border-radius: 0 0 0 5px;
+  border-radius: 0 0 0 5px;
   padding: 3px 3px 5px 5px;
   }
 
@@ -119,6 +120,25 @@ pre {
 /* Tag Cloud */
 .tagcloud {
   text-align: center;
+  }
+
+.tagcloud a.tag {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #ccc;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #000;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-shadow: 1px 1px 0 #fff;
+  }
+
+.tagcloud a.tag:hover {
+  background-color: #f88;
+  border: 1px solid #f00;
+  color: #000;
+  text-decoration: none;
   }
 
 /* Navigation */
@@ -136,11 +156,13 @@ pre {
   padding: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  border-radius: 5px;
   }
 
 .secret img.gravatar {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  border-radius: 5px;
   padding: 2px;
   float: right;
   position: relative;
@@ -152,6 +174,10 @@ pre {
   height: 48px;
   }
 
+.secret a.gravatar:hover img.gravatar {
+  border-color: #f88;
+  }
+
 .secret span.gravatar-hash {
   visibility: hidden;
   position: fixed;
@@ -160,10 +186,29 @@ pre {
 .secret .subject a {
   font-style: italic;
   font-size: 1.2em;
+  text-shadow: 1px 1px 1px #000;
   }
 
 .secret .story {
   clear: both;
+  }
+
+.secret .tags a.tag {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  background-color: #ccc;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  color: #000;
+  padding-left: 5px;
+  padding-right: 5px;
+  text-shadow: 1px 1px 0 #fff;
+  }
+
+.secret .tags a.tag:hover {
+  background-color: #f88;
+  border: 1px solid #f00;
+  text-decoration: none;
   }
 
 .secret .poster {
@@ -179,6 +224,7 @@ pre {
 .secret .stuff {
   -moz-border-radius: 0 0 5px 5px;
   -webkit-border-radius: 0 0 5px 5px;
+  border-radius: 0 0 5px 5px;
   clear: both;
   padding: 3px 3px 23px 3px;
   }
@@ -215,6 +261,7 @@ pre {
 #secret-definition {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  border-radius: 5px;
   padding: 5px;
   width: 200px;
   float: right;
@@ -239,6 +286,7 @@ pre {
 .notice {
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
+  border-radius: 10px;
   border: 3px solid #488;
   width: 90%;
   margin: 10px auto;
@@ -334,6 +382,7 @@ div.buttons input.big {
 #preview > .secret {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  border-radius: 5px;
   margin-top: 5px;
   }
 

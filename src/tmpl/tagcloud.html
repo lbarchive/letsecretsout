@@ -10,9 +10,7 @@
 {% block content %}
 <div class="tagcloud">
 {% if tags %}
-{% for tag in tags %}
-<a href="/tag/{{ language }}/{{ tag.name|urlencode }}" style="font-size:{{ tag.size }}em;" title="{{ tag.count }} secret{{ tag.count|pluralize}}">{{ tag.name|escape }}</a>
-{% endfor %}
+{% for tag in tags %}<a class="tag" href="/tag/{{ language }}/{{ tag.name|urlencode }}" style="font-size:{{ tag.size }}em;" title="{{ tag.count }} secret{{ tag.count|pluralize}}">{{ tag.name|escape }}</a> {% endfor %}
 {% else %}
 <div class="notice">{% trans "No tags available!" %}</div>
 {% endif %}
