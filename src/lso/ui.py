@@ -9,7 +9,7 @@ def render_write(tmpl_values, tmpl_name, request=None, response=None):
   # A helper function to set up some common stuff, render, then write to client
   if 'HEAD' not in tmpl_values:
     tmpl_values['HEAD'] = ''
-  tmpl_values['HEAD'] += '  <link href="/css/main.css?r=3" type="text/css" rel="stylesheet"/>\n'
+  tmpl_values['HEAD'] += '  <link href="/css/main.css?r=4" type="text/css" rel="stylesheet"/>\n'
   tmpl_values['HEAD'] += '  <script src="http://www.google.com/jsapi" type="text/javascript"></script>\n'
   tmpl_values['HEAD'] += '  <script src="/js/main.js" type="text/javascript"></script>\n'
   tmpl_values['HEAD'] += '  <script src="/js/jquery.easing.js" type="text/javascript"></script>\n'

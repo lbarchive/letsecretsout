@@ -83,6 +83,7 @@ a {
 input, textarea {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
+  border-radius: 5px;
   background-color: #303636;
   color: #ddd;
   border: 2px solid #ccc;
