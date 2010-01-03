@@ -100,7 +100,7 @@ h2 {
 </style>
 <script>
 function init() {
-  get_new_random_secret();
+  window.setTimeout(get_new_random_secret, 1);
   }
 function get_new_random_secret() {
   var ele = document.getElementById('secret');
