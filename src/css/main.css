@@ -113,8 +113,18 @@ pre {
   padding: 3px 3px 5px 5px;
   }
 
+#topbar * {
+  vertical-align: middle;
+  }
+
 #topbar a {
   font-weight: bold;
+  }
+
+/* AddThis */
+
+div.addthis_toolbox {
+  display: inline-block;
   }
 
 /* Tag Cloud */
