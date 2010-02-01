@@ -90,6 +90,17 @@ function init_disqus() {
     $.getScript("http://disqus.com/forums/lso/get_num_replies.js?" + query);
   }
 
+// Jumper
+function jumper_relocate() {
+  var window_top = $(window).scrollTop();
+  var div_top = $('#jumper-anchor').offset().top;
+  if (window_top > div_top)
+    $('#jumper')
+        .css('width', $('#jumper').width())
+        .addClass('sticky')
+  else
+    $('#jumper').removeClass('sticky');
+  }
 
 google.setOnLoadCallback(function () {
   var messages = window.lso_messages;
@@ -100,6 +111,9 @@ google.setOnLoadCallback(function () {
   init_jquery_cookie_plugin();
   render_gravatar();
   init_disqus();
+  // Jumper
+  $(window).scroll(jumper_relocate);
+  jumper_relocate();
   });
 
 // ===================
