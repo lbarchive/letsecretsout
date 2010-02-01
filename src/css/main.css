@@ -4,8 +4,9 @@ body {
 
 h2,
 h2 a[name] {
-  text-decoration: none;
-  }
+/*padding-top: 1em;*/
+text-decoration: none;
+}
 
 h3,
 h3 a[name] {
@@ -60,6 +61,10 @@ pre {
   text-decoration: none;
   }
 
+.nav {
+margin-bottom: 1em;
+}
+
 .nav a {
   font-family: Serif;
   font-size: 12px;
@@ -97,6 +102,32 @@ pre {
   font-size: 12px;
   padding-bottom: 1em;
   }
+
+/* Jumper */
+
+#jumper {
+background-color: #c66;
+-moz-border-radius: 0.5ex;
+-webkit-border-radius: 0.5ex;
+border-radius: 0.5ex;
+clear: both;
+color: #000;
+margin-top: 1ex;
+padding: 0.5ex;
+text-align: center;
+}
+#jumper * {
+color: #ccc;
+}
+#jumper.sticky {
+-moz-border-radius: 0 0 0.5em 0.5em;
+-webkit-border-radius: 0 0 0.5em 0.5em;
+border-radius: 0 0 0.5em 0.5em;
+margin-top: 0;
+position: fixed;
+top: 0;
+z-index: 10000;
+}
 
 /* Topbar */
 
@@ -158,6 +189,17 @@ div.addthis_toolbox {
   text-align: center;
   }
 
+.navigation.pages .prev {
+float: left;
+text-align: right;
+width: 250px;
+}
+
+.navigation.pages .next {
+float: right;
+text-align: left;
+width: 250px;
+}
 /* Secret */
 
 .secret {
@@ -281,17 +323,27 @@ div.addthis_toolbox {
 #random-secret,
 #recent-secrets {
   clear: both;
-  margin: 10px 0;
   }
-#random-secret .title,
-#recent-secrets .title {
-  color: #080;
-  font-family: Times New Roman;
-  font-style: italic;
-  font-weight: bold;
-  font-size: 20px;
-  text-align: center;
-  }
+
+#recent-secrets,
+#recentcomments,
+#popularthreads,
+#topcommenters {
+padding-top: 1em;
+}
+
+img.dsq-widget-avatar {
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
+margin: 5px !important;
+padding: 2px !important; 
+opacity: 0.90;
+}
+
+a:hover img.dsq-widget-avatar {
+border-color: #f88 !important;
+}
 
 .notice {
   -moz-border-radius: 10px;

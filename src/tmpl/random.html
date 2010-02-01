@@ -10,7 +10,7 @@
 
 {% block content %}
 <div id="random-secret">
-<div class="title">{% trans "Read this Random Secret" %}{% if secret %}{% blocktrans with secret.get_name as secret_name %} written by {{ secret_name }}{% endblocktrans %}{% endif %}</div>
+<h2 class="title">{% trans "Read this Random Secret" %}{% if secret %}{% blocktrans with secret.get_name as secret_name %} written by {{ secret_name }}{% endblocktrans %}{% endif %}</h2>
 {% if secret %}
 {% include "secret_item.html" %}
 {% else %}

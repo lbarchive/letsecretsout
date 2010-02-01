@@ -14,12 +14,27 @@
 {% blocktrans %}Let Secrets Out ("LSO") is a place where you can post your secrets without revealing your true identity. You do not need to create an account to post a secret, in fact, you can not create one on LSO. You are forced to remain some degree of anonymity. You can also confess a sin you have committed or something.{% endblocktrans %}
 </div>
 
+<div id="jumper-anchor"></div>
+<div id="jumper">
+<a href="#recent-secrets">{% trans "Recent Secrets" %}</a> &bull;
+<a href="#recentcomments">{% trans "Recent Comments" %}</a> &bull;
+<a href="#popularthreads">{% trans "Popular Secrets" %}</a> &bull;
+<a href="#topcommenters">{% trans "Top Commenters" %}</a>
+</div>
+
 <div id="recent-secrets">
-<div class="title">{% trans "Recent Secrets" %}</div>
+<h2 class="title">{% trans "Recent Secrets" %}</h2>
 {% if recent_secrets %}
 {% for secret in recent_secrets %}{% include "secret_item.html" %}{% endfor %}
 {% else %}
 <div class="notice">{% trans "No secrets available!" %}</div>
 {% endif %}
 </div>
+
+<div id="recentcomments" class="dsq-widget">
+<h2 class="dsq-widget-title">{% trans "Recent Comments" %}</h2><script type="text/javascript" src="http://disqus.com/forums/lso/recent_comments_widget.js?num_items=20&hide_avatars=0&avatar_size=48&excerpt_length=200"></script></div><a href="http://disqus.com/">Powered by Disqus</a>
+
+<div id="popularthreads" class="dsq-widget"><h2 class="dsq-widget-title">{% trans "Popular Secrets" %}</h2><script type="text/javascript" src="http://disqus.com/forums/lso/popular_threads_widget.js?num_items=20"></script></div><a href="http://disqus.com/">Powered by Disqus</a>
+
+<div id="topcommenters" class="dsq-widget"><h2 class="dsq-widget-title">{% trans "Top Commenters" %}</h2><script type="text/javascript" src="http://disqus.com/forums/lso/top_commenters_widget.js?num_items=20&hide_mods=0&hide_avatars=0&avatar_size=48"></script></div><a href="http://disqus.com/">Powered by Disqus</a>
 {% endblock %}

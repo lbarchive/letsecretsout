@@ -68,3 +68,8 @@ a {
 #secret-definition {
   background-color: #ccc;
   }
+
+img.dsq-widget-avatar {
+background-color: #d0caca !important;
+border: 2px solid #000 !important;
+}

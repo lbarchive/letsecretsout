@@ -16,9 +16,9 @@
 <div class="notice">{% trans "No secrets available!" %}</div>
 {% endif %}
 <div class="navigation pages">
-{% if prev %}<a href="/browse/{{ lang_path }}{{ prev }}" class="prev">{% trans "Previous Page" %}</a>{% endif %}
-{% for page in nav_list %} {% ifequal page 0 %}...{% else %}{% ifequal page current_page %}{{ page }}{% else %}<a href="/browse/{{ lang_path }}{{ page }}" class="item">{{ page }}</a>{% endifequal %}{% endifequal %}{% endfor %}
-{% if next %}<a href="/browse/{{ lang_path }}{{ next }}" class="next">{% trans "Next Page" %}</a>{% endif %}
+<div class="prev">&nbsp;{% if prev %}<a href="/browse/{{ lang_path }}{{ prev }}">{% trans "Previous Page" %}</a>{% endif %}</div>
+{{ current_page }}
+<div class="next">{% if next %}<a href="/browse/{{ lang_path }}{{ next }}">{% trans "Next Page" %}</a>{% endif %}&nbsp;</div>
 </div>
 {% if tag %}<div style="text-align:center"><a href="/tag/{{ language }}">{% blocktrans %}View the Tag Cloud of {{ title }} Secrets{% endblocktrans %}</a></div>{% endif %}
 <div class="feed"><a href="{{ feed_link }}{% if tag %}{{ tag|urlencode }}{% endif %}"><img src="/img/rss.png" title="{% trans "RSS feed" %}"/> {% trans "RSS feed" %}</a></div>
