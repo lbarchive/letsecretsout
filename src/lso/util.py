@@ -168,7 +168,7 @@ class I18NRequestHandler(webapp.RequestHandler):
         # It's not in valid language for interface, redirect to default language
         self.redirect('%s://%s.%s%s' % (self.request.scheme,
             settings.LANGUAGE_CODE,
-            m.group(2), m.group(3)))
+            m.group(2), port))
         return
     else:
       # Decide the language from Cookies/Headers
