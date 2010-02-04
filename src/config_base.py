@@ -51,14 +51,14 @@ GRAVATAR_CHECK_SALT = r''
 # Valid language to submit
 VALID_LANGUAGES = (
     # 'en', 'zh_TW' should match the directories in conf/locale/*
-#    ('de', 'Deutsch'),
+    ('de', 'Deutsch'),
     ('en', 'English'),
     ('es', 'Español'),
     ('fr', 'Français'),
-#    ('it', 'Italiano'),
+    ('it', 'Italiano'),
     ('ja', '日本語'),
-#    ('ko', '한국어'),
-#    ('pt', 'Português'),
+    ('ko', '한국어'),
+    ('pt', 'Português'),
     ('zh-cn', '简体中文'),
     ('zh-tw', '繁體中文'),
     )
