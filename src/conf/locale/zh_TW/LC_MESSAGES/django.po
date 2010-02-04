@@ -1,0 +1,846 @@
+# Chinese (Traditional) translation for lso
+# Copyright (c) 2009 Rosetta Contributors and Canonical Ltd 2009
+# This file is distributed under the same license as the lso package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: lso\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-02-04 15:46+0800\n"
+"PO-Revision-Date: 2010-02-03 13:19+0000\n"
+"Last-Translator: livibetter <livibetter@gmail.com>\n"
+"Language-Team: Chinese (Traditional) <zh_TW@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-02-04 05:48+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: config_base.py:70
+msgid "Light"
+msgstr ""
+
+#: config_base.py:71
+msgid "Dark"
+msgstr ""
+
+#: config_base.py:78
+msgid "Gravatar"
+msgstr "Gravatar"
+
+#: config_base.py:79
+msgid "Secret"
+msgstr "秘密"
+
+#: config_base.py:80
+msgid "Identicon"
+msgstr "Identicon"
+
+#: config_base.py:81
+msgid "MonsterID"
+msgstr "MonsterID"
+
+#: config_base.py:82
+msgid "Wavatars"
+msgstr "Wavatars"
+
+#: config_base.py:83
+msgid "Turn off Gravatar"
+msgstr "不使用 Gravatar"
+
+#: settings.py:65
+msgid "Settings saved"
+msgstr "設定已儲存"
+
+#: admin.py:82
+msgid "Deleted"
+msgstr "已刪除"
+
+#: API.py:68 tmpl/secret_page.html:7 tmpl/secret_page.html.py:11
+#: tmpl/header.html:4 tmpl/base.html:6 tmpl/admin.html:6
+msgid "Let Secrets Out"
+msgstr "說出您的秘密"
+
+#: API.py:70
+msgid "A place to talk about your secrets."
+msgstr "一個讓您談論秘密的地方。"
+
+#: browse.py:62 browse.py:67
+msgid "Invalid Secret ID!"
+msgstr "不合法的秘密編號！"
+
+#: browse.py:71
+msgid "You have flagged this secret!"
+msgstr "您已檢舉該秘密！"
+
+#: browse.py:74
+msgid "You have flagged too many secrets in a short time!"
+msgstr "您在很短的時間內檢舉太多的秘密！"
+
+#: browse.py:79
+msgid "Flagged"
+msgstr "已檢舉"
+
+#: browse.py:90 browse.py:193 tmpl/browse.html:26 tmpl/tagcloud.html:20
+msgid "All"
+msgstr "全部"
+
+#: post.py:63
+msgid "You need to enter the reCAPTCHA words!"
+msgstr "您必須輸入reCAPTCHA檢查碼！"
+
+#: post.py:66
+msgid "You did not enter the correct reCAPTCHA wrods, please try again!"
+msgstr "您並未輸入正確的reCAPTCHA檢查碼，請再試一次！"
+
+#: post.py:70
+msgid "You have posted too many secrets in a short time!"
+msgstr "您在很短的時間內發布太多的秘密！"
+
+#: post.py:95 post.py:143 tmpl/post.html:49
+msgid "Subject"
+msgstr "主題"
+
+#: post.py:95 post.py:143 tmpl/post.html:56
+msgid "Story"
+msgstr "故事內容"
+
+#: post.py:98 post.py:145
+#, python-format
+msgid "%s is required"
+msgstr "%s欄位為必填"
+
+#: post.py:134
+msgid "Preview of Your Secret"
+msgstr "預覽"
+
+#: post.py:156
+msgid "You have to enter an email address in Gravatar field!"
+msgstr "您必須輸入電子郵件帳號於Gravatar欄位！"
+
+#: post.py:160
+msgid "You Gravatar Check for Let Secrets Out"
+msgstr "Gravatar檢查碼用於Let Secrets Out"
+
+#: post.py:161
+#, python-format
+msgid "The Gravatar Check for %(gravatar)s is %(gravatar_check)s"
+msgstr ""
+
+#: post.py:162
+#, python-format
+msgid "The Gravatar Check has been sent to %s, please check your mailbox."
+msgstr "Gravatar 檢查碼已寄出至 %s，請檢查您的信箱。"
+
+#: conf/settings.py:6
+#, fuzzy
+msgid "US English"
+msgstr "英語 (English)"
+
+#: conf/settings.py:7
+msgid "Traditional Chinese"
+msgstr ""
+
+#: lso/models.py:43
+msgid "Incorrect language!"
+msgstr "不正確的語言！"
+
+#: lso/models.py:47
+#, python-format
+msgid "Name must be longer than %(length)d characters!"
+msgstr "屬名必須長於 %(length)d 字元！"
+
+#: lso/models.py:49
+#, python-format
+msgid "Name must be shorter than %(length)d characters!"
+msgstr "屬名必須短於 %(length)d 字元！"
+
+#: lso/models.py:53
+#, python-format
+msgid "Subject must be longer than %(length)d characters!"
+msgstr "主題必須長於 %(length)d 字元！"
+
+#: lso/models.py:55
+#, python-format
+msgid "Subject must be shorter than %(length)d characters!"
+msgstr "屬名必須短於 %(length)d 字元！"
+
+#: lso/models.py:59
+#, python-format
+msgid "Story must be longer than %(length)d characters!"
+msgstr "故事必須長於 %(length)d 字元！"
+
+#: lso/models.py:61
+#, python-format
+msgid "Story must be shorter than %(length)d characters!"
+msgstr "故事必須短於 %(length)d 字元！"
+
+#: lso/models.py:65
+#, python-format
+msgid "Only %(limit)d tags are allowed!"
+msgstr "只能輸入 %(limit)d 個標籤！"
+
+#: lso/models.py:68
+#, python-format
+msgid "Tag \"%(tag)s\" is too long, %(length)d characters is the limitation."
+msgstr "標籤「%(tag)s」太長，最長只能 %(length)d 字元。"
+
+#: lso/models.py:72
+msgid "Gravatar Check is invalid!"
+msgstr "Gravatar 檢查碼不合！"
+
+#: lso/models.py:120 tmpl/secret_page.html:34
+msgid "Anonymous"
+msgstr "匿名者"
+
+#: tmpl/about.html:4 tmpl/header.html:7
+msgid "About"
+msgstr "關於"
+
+#: tmpl/about.html:7
+msgid "What is Let Secrets Out?"
+msgstr "什麼是<b>說出您的秘密</b>？"
+
+#: tmpl/about.html:8
+msgid ""
+"\n"
+"<p>A place to post your secrets anonymously.</p>\n"
+msgstr ""
+"\n"
+"<p>一個地方讓您匿名地分享您的秘密。</p>\n"
+
+#: tmpl/about.html:12
+msgid "Why Created This?"
+msgstr "為何創造這個網站？"
+
+#: tmpl/about.html:13
+msgid ""
+"\n"
+"<p>The creator is a fan of <a href=\"http://postsecret.blogspot.com/"
+"\">PostSecret</a>, <a href=\"http://www.flickr.com/groups/56474392@N00/\">30 "
+"SECRETS IN 30 DAYS</a>, and <a href=\"http://www.secrettalk.com/\">Secret "
+"Talk</a>, however he have never submitted any contents to them. But he does "
+"have own secrets wanting to post and he prefers to post on own space, "
+"therefore he created LSO. One of other reasons of creation is to allow "
+"people posting in their own languages. He has also been reading the secrets "
+"on Secret Talk and he found out some commenters are rude and without "
+"compassions. He wishes LSO could become a better place. <a href=\"http://"
+"letsecretsout.blogspot.com/2009/11/how-this-gets-started.html\">Read more..."
+"</a></p>\n"
+msgstr ""
+
+#: tmpl/about.html:17
+msgid "This Project"
+msgstr ""
+
+#: tmpl/about.html:18
+msgid ""
+"\n"
+"<p>This project is created using Google App Engine, the source code can be "
+"grabbed at <a href=\"http://code.google.com/p/letsecretsout/\">Google Code</"
+"a>. The code is based on <a href=\"http://i-thank.appspot.com/\">I Thank</a> "
+"(a failure of the creator, no one uses) with mass modifications.</p>\n"
+msgstr ""
+
+#: tmpl/about.html:22
+msgid "Want to Help Let Secrets Out?"
+msgstr "想要幫助<b>說出您的秘密</b>嗎？"
+
+#: tmpl/about.html:23
+msgid "There are many ways that you could help. You can:"
+msgstr ""
+
+#: tmpl/about.html:25
+msgid "Follow @<a href=\"http://twitter.com/letsecretsout\">letsecretsout</a>"
+msgstr ""
+
+#: tmpl/about.html:26
+msgid ""
+"<a href=\"https://translations.launchpad.net/lso/trunk/+pots/django\">Help "
+"translate</a> Let Secrets Out"
+msgstr ""
+
+#: tmpl/about.html:27
+msgid "Flag bad contents"
+msgstr "檢舉不好的內容"
+
+#: tmpl/secret_page.html:28
+msgid "View other secrets"
+msgstr "閱讀其他秘密"
+
+#: tmpl/secret_page.html:30
+msgid "Related Secrets"
+msgstr "相關秘密"
+
+#: tmpl/secret_page.html:38
+msgid "No related secrets found."
+msgstr "沒有相關秘密。"
+
+#: tmpl/secret_page.html:42
+msgid "Discussions"
+msgstr "意見討論"
+
+#: tmpl/secret_page.html:43
+msgid "View the discussion thread."
+msgstr "閱讀意見"
+
+#: tmpl/secret_page.html:43
+msgid "blog comments powered by <span class=\"logo-disqus\">Disqus</span>"
+msgstr ""
+
+#: tmpl/secret_page.html:45
+msgid "This secret is not available or not existing!"
+msgstr "此秘密無法被存取或不存在！"
+
+#: tmpl/browse.html:4
+msgid "Tag"
+msgstr "標籤"
+
+#: tmpl/browse.html:4
+#, python-format
+msgid "Page %(current_page)s"
+msgstr "第 %(current_page)s 頁"
+
+#: tmpl/browse.html:7 tmpl/tagcloud.html:7
+msgid "RSS"
+msgstr "RSS"
+
+#: tmpl/browse.html:16 tmpl/home.html:30
+msgid "No secrets available!"
+msgstr "沒有秘密！"
+
+#: tmpl/browse.html:19
+msgid "Previous Page"
+msgstr "上一頁"
+
+#: tmpl/browse.html:21
+msgid "Next Page"
+msgstr "下一頁"
+
+#: tmpl/browse.html:23
+#, python-format
+msgid "View the Tag Cloud of %(title)s Secrets"
+msgstr ""
+
+#: tmpl/browse.html:24 tmpl/tagcloud.html:18
+msgid "RSS feed"
+msgstr ""
+
+#: tmpl/browse.html:26 tmpl/tagcloud.html:20
+msgid "Browse secrets in other language:"
+msgstr "瀏覽其他語言的秘密："
+
+#: tmpl/home.html:4
+msgid "Post your secrets anonymously and freely"
+msgstr "匿名地張貼您的秘密"
+
+#: tmpl/home.html:7
+msgid ""
+"Tell you secrets anonymously and freely, meet people who have similar "
+"experience, get help and help others."
+msgstr ""
+
+#: tmpl/home.html:8
+msgid ""
+"secret, confess, confession, sharing, experience, post, discuss, bulletin, "
+"bulletin board"
+msgstr "秘密, 經驗, 討論, 分享"
+
+#: tmpl/home.html:14
+msgid ""
+"Let Secrets Out (\"LSO\") is a place where you can post your secrets without "
+"revealing your true identity. You do not need to create an account to post a "
+"secret, in fact, you can not create one on LSO. You are forced to remain "
+"some degree of anonymity. You can also confess a sin you have committed or "
+"something."
+msgstr ""
+"<b>說出您的秘密</b>讓您張貼的秘密而不用洩漏真實身份。您不需要註冊帳號，事實上"
+"您也無法註冊，您必須在此保留一定程度的匿名性。您也可以在此承認您所犯過得過"
+"錯。"
+
+#: tmpl/home.html:19 tmpl/home.html.py:26
+msgid "Recent Secrets"
+msgstr "最新秘密"
+
+#: tmpl/home.html:20 tmpl/home.html.py:35
+msgid "Recent Comments"
+msgstr "最新意見"
+
+#: tmpl/home.html:21 tmpl/home.html.py:37
+msgid "Popular Secrets"
+msgstr ""
+
+#: tmpl/home.html:22 tmpl/home.html.py:39
+msgid "Top Commenters"
+msgstr ""
+
+#: tmpl/header.html:8
+msgid "Browse"
+msgstr "瀏覽"
+
+#: tmpl/header.html:9 tmpl/post.html:63
+msgid "Tags"
+msgstr "標籤"
+
+#: tmpl/header.html:10
+msgid "Post a Secret"
+msgstr "張貼秘密"
+
+#: tmpl/header.html:11
+msgid "Random"
+msgstr "隨機"
+
+#: tmpl/header.html:12
+msgid "Blog"
+msgstr "網誌"
+
+#: tmpl/header.html:13 tmpl/faq.html:4
+msgid "FAQ"
+msgstr "常見問題"
+
+#: tmpl/header.html:14 tmpl/terms.html:4 tmpl/terms.html.py:7
+msgid "Terms"
+msgstr "使用條款"
+
+#: tmpl/settings.html:4 tmpl/topbar.html:8
+msgid "Settings"
+msgstr "設定"
+
+#: tmpl/settings.html:8
+msgid "User Interface"
+msgstr "使用者介面"
+
+#: tmpl/settings.html:10 tmpl/post.html:39
+msgid "Language"
+msgstr "語言"
+
+#: tmpl/settings.html:20
+msgid "Style"
+msgstr "風格"
+
+#: tmpl/settings.html:24 tmpl/settings.html.py:35
+msgid "(Default)"
+msgstr "（預設）"
+
+#: tmpl/settings.html:30
+msgid "Gravatar Options"
+msgstr "Gravatar 選項"
+
+#: tmpl/settings.html:42
+msgid "Posting"
+msgstr "張貼選項"
+
+#: tmpl/settings.html:44 tmpl/post.html:15
+msgid "Name"
+msgstr "屬名"
+
+#: tmpl/settings.html:47 tmpl/post.html:18
+msgid "Leave empty, all secrets will be posted as <i>Anonymous</i>."
+msgstr "如果留空，秘密將會以<i>匿名者</i>張貼。"
+
+#: tmpl/settings.html:52 tmpl/post.html:23
+msgid ""
+"Gravatar email address <a href='/faq#gravatar' class='info-pin'>&#10033;</a> "
+"or Secret ID Text <a href='/faq#secretidtext' class='info-pin'>&#10033;</a>"
+msgstr ""
+
+#: tmpl/settings.html:55 tmpl/post.html:26
+msgid ""
+"If you enter your Gravatar email address, you will need to get the Gravatar "
+"Check. <a href='javascript:send_gravatar_check();'>Click here</a> to send "
+"the Gravatar Check to your Gravatar email address"
+msgstr ""
+
+#: tmpl/settings.html:60 tmpl/post.html:31
+msgid "Gravatar Check"
+msgstr "Gravatar 檢查碼"
+
+#: tmpl/settings.html:63 tmpl/post.html:34
+msgid "Leave empty if you do not use Gravatar email address above."
+msgstr "如果您不使用 Gravatar ，請將此欄位留空。"
+
+#: tmpl/settings.html:69
+msgid "Save"
+msgstr "儲存"
+
+#: tmpl/footer.html:8
+msgid "Chrome Extension"
+msgstr ""
+
+#: tmpl/footer.html:12
+msgid ""
+"Let Secrets Out is created by <a href=\"http://j.mp/livibetter\">Yu-Jie Lin</"
+"a>"
+msgstr ""
+"<b>說出您的秘密</b>是由<a href=\"http://j.mp/livibetter\">Yu-Jie Lin</a>創建"
+
+#: tmpl/random.html:4
+msgid "Random Secret"
+msgstr "隨機秘密"
+
+#: tmpl/random.html:7
+msgid "Read a random secret"
+msgstr "閱讀隨機秘密"
+
+#: tmpl/random.html:8
+msgid ""
+"secret, confess, confession, sharing, experience, post, discuss, bulletin, "
+"bulletin board, random"
+msgstr ""
+
+#: tmpl/random.html:13
+msgid "Read this Random Secret"
+msgstr "閱讀此隨機秘密"
+
+#: tmpl/random.html:13
+#, python-format
+msgid " written by %(secret_name)s"
+msgstr " 由 %(secret_name)s 所張貼"
+
+#: tmpl/random.html:17
+msgid "No random secret available!"
+msgstr "沒有隨機秘密！"
+
+#: tmpl/not_implemented.html:4
+msgid "Hooray! You just hit the secret of secrets!"
+msgstr "天啊！您發現一個秘密中的秘密！"
+
+#: tmpl/not_implemented.html:7
+msgid "Shhh...! You just discover a super secret!"
+msgstr "噓～～～您發現一個天大的秘密！"
+
+#: tmpl/not_implemented.html:11
+msgid "I am too lazy to accomplish many things"
+msgstr "我太懶惰所以無法完成許多事"
+
+#: tmpl/not_implemented.html:12
+msgid ""
+"It is ashamed that I could not finish this page in time. So you read this "
+"secret, which has been buried very very deep inside of me."
+msgstr ""
+
+#: tmpl/not_implemented.html:13
+msgid "Tagged with laziness, procrastination"
+msgstr "標記為懶惰、拖延"
+
+#: tmpl/not_implemented.html:15
+msgid ""
+"<a href=\"http://j.mp/livibetter\">livibetter</a> posted <span class=\"date"
+"\"\">long time</span> ago"
+msgstr ""
+
+#: tmpl/not_implemented.html:18 tmpl/secret_item.html:29
+msgid "Flag"
+msgstr "檢舉"
+
+#: tmpl/topbar.html:5
+msgid "Share"
+msgstr "分享"
+
+#: tmpl/tagcloud.html:4
+msgid "Tag Cloud"
+msgstr "標籤雲"
+
+#: tmpl/tagcloud.html:15
+msgid "No tags available!"
+msgstr "沒有標籤！"
+
+#: tmpl/admin.html:6
+msgid "Admin"
+msgstr "管理"
+
+#: tmpl/faq.html:7
+msgid "What is a Secret?"
+msgstr "什麼是個秘密？"
+
+#: tmpl/faq.html:8
+msgid ""
+"\n"
+"<p>By dictionary definition, a secret is something kept from the knowledge "
+"of others or shared only confidentially with a few. (Merriam-Webster Online "
+"Dictionary. 2009)</p>\n"
+"<p>Generally, you could not tell people about something because you would "
+"feel ashamed, embarrassed, disgusting, stressed, depressed, and/or other "
+"emotional feelings. Or this something is kept inside a small group of people "
+"and no one would or are allowed to discuss with outsiders. You may be able "
+"to tell a few very close friend or family members</p>\n"
+msgstr ""
+
+#: tmpl/faq.html:13
+msgid "Do I have to post a secret? Can I just ask questions?"
+msgstr "我一定要張貼秘密嗎？可以只問問題嗎？"
+
+#: tmpl/faq.html:14
+msgid ""
+"\n"
+"<p>Yes, it must be a secret and it has to be relaed to you. You secret might "
+"also be your problem, that you need someone's advise. If you do need "
+"advises, please make sure the main body of your posting is THE SECRET, not "
+"your question.</p>\n"
+"<p>Besides the secrets, it could also be a confession as long as you could "
+"not tell anyone else the things you have committed and those make you feel "
+"quilty.</p>\n"
+"<p>More, please do not expect the advises from others and those will be wise."
+"</p>\n"
+msgstr ""
+
+#: tmpl/faq.html:20
+msgid "How to Post in a good way?"
+msgstr "如何張貼一個好秘密？"
+
+#: tmpl/faq.html:21
+msgid ""
+"\n"
+"<p>When you decide to post your secretss, all you want may not only the "
+"<i>posting</i>, you may also want get some feedbacks or find some people who "
+"have same situation as you do. If you just type your secret without care, "
+"readers may not be willing to read your words in mess. We do not have a "
+"guide for it, but here is what we have in mind:</p>\n"
+"<ul>\n"
+"  <li>Please try to calm down as much as you can. You may get very emotional "
+"while elaborating your secret.</li>\n"
+"  <li>Try not use the writting method you have on Twitter, e.q. It's I've "
+"not Ive, it's I'm not Im. Do not rush, take your time to write a clear "
+"story. You will want more people to read your story, not get confused by "
+"your misspelling or grammar errors.</li>\n"
+"  <li>Try not use punctuations in these ways: !!!!, ...., etc.</li>\n"
+"  <li>Better not mention real names. It may not a good idea to mention names."
+"</li>\n"
+"  <li>Try not use f-word, or other inappropriate words for minors.</li>\n"
+"  <li>Try not use explicit language. Many of secrets are involving sex, "
+"which are allowed to be posted on LSO, but the Internet is an open space, "
+"please try to be careful while you are writing your story.</li>\n"
+"  <li>Do not fake story, imagine story, or manipulate the truth of your "
+"story, partially, or completely. You are anonymous, please be yourself and "
+"honest.</li>\n"
+"  <li>Preview your secret before submitting.</li>\n"
+"</ul>\n"
+msgstr ""
+
+#: tmpl/faq.html:35
+msgid "How about Commenting?"
+msgstr "關於意見？"
+
+#: tmpl/faq.html:36
+msgid ""
+"\n"
+"<p>The commenting system on LSO is <a href=\"http://disqus.com/\">Disqus</"
+"a>, LSO do not have an internal commenting system. You can comment as "
+"anonymous, just do not log in. You can also use same Gravatar email address "
+"on Disqus system, or you can just use different account.</p>\n"
+msgstr ""
+
+#: tmpl/faq.html:40
+msgid "What is Gravatar?"
+msgstr "什麼事 Gravatar ？"
+
+#: tmpl/faq.html:41
+msgid ""
+"\n"
+"<p>LSO uses <a href=\"http://en.gravatar.com/\">Gravatar</a> (Globally "
+"Recognized Avatar) to enable secret posters some sort of pseudo-identity. "
+"With Gravatar, you can have your own avatar on your secrets, readers could "
+"recognize the posters but still do not know who you really are. Basically, "
+"you will need a Gravatar email (an email which you use to sign up on "
+"Gravatar website), but you do not need to reveal this email address to "
+"public but a <a href=\"http://en.wikipedia.org/wiki/Hash_function\">hash</a> "
+"of it. It is impossible to know you email from the hash.</p>\n"
+"<p>For example, the hash of <i>example@example.com</i> is "
+"<tt>23463b99b62a72f26ed677cc556c44e8</tt>, we only need the hash to get your "
+"avatar. As long as you have a secret email address which no one knows but "
+"you, no one would ever know you email address.</p>\n"
+"<p>On LSO, while posting, you can pass the email address to LSO (We do not "
+"store it), then LSO would hash it and store the hash. This hash also allow "
+"to be used a key to search on LSO for secrets with same hash.</p>\n"
+"<p>In order to use you Gravatar, you will be asked for Gravatar Check code. "
+"The code will be sent to the email address from LSO server, it is for "
+"preventing some people use others' Gravatar emails. It is an identification "
+"verifcation code.</p>\n"
+msgstr ""
+
+#: tmpl/faq.html:48
+msgid "What is Secret ID Text?"
+msgstr ""
+
+#: tmpl/faq.html:49
+msgid ""
+"\n"
+"<p>It is a text which only you know and LSO will generate a hash for that "
+"text, which can represent you. It is very similar to Gravatar's hash, the "
+"difference is it is generated by the text not an email address. You only "
+"need to enter this secret ID text to Gravatar email address field.</p>\n"
+"<p>Please choose it wisely, it is stored in your browser's cookie, not on "
+"the server. LSO will never store your secret ID text to database, it is only "
+"processed in memory. Moreover, the hash is not genearated by your secret "
+"text but your text plus another secret text by LSO.</p>\n"
+msgstr ""
+
+#: tmpl/faq.html:54
+msgid "What is Flag for?"
+msgstr "檢舉為何用途？"
+
+#: tmpl/faq.html:55
+msgid ""
+"\n"
+"<p>You can flagging bad contents, Disqus also provides flagging. Note that "
+"it is <i>NOT FOR FLAGGING</i> the secret you <i>DO NOT LIKE</i>! Here is "
+"some concepts for flagging:</p>\n"
+"<ul>\n"
+"  <li>Spam</li>\n"
+"  <li>Duplicated secrets</li>\n"
+"  <li>Rude comments</li>\n"
+"  <li>Or these <a href=\"/terms\">disallowed contents</a></li>\n"
+"</ul>\n"
+"<p>Once a secrets get enough flags, it will be hidden.</p>\n"
+msgstr ""
+
+#: tmpl/faq.html:67
+msgid "Where is My Language?"
+msgstr "怎麼沒有我的語言？"
+
+#: tmpl/faq.html:68
+msgid ""
+"\n"
+"<p>Please ask for the language you spoken at (TBD).</p>\n"
+msgstr ""
+
+#: tmpl/secret_item.html:12
+msgid "Tagged with"
+msgstr "標記為"
+
+#: tmpl/secret_item.html:14
+msgid "No tags"
+msgstr "沒有標籤"
+
+#: tmpl/secret_item.html:19
+#, python-format
+msgid ""
+"<a href=\"/u/%(secret_gravatar)s\">%(secret_name)s</a> posted <span class="
+"\"date\" title=\"%(secret_published_abs)s\">%(secret_published)s</span> ago"
+msgstr ""
+"<a href=\"/u/%(secret_gravatar)s\">%(secret_name)s</a> 張貼於 <span class="
+"\"date\" title=\"%(secret_published_abs)s\">%(secret_published)s</span> 之前"
+
+#: tmpl/secret_item.html:21
+#, python-format
+msgid ""
+"%(secret_name)s posted <span class=\"date\" title=\"%(secret_published_abs)s"
+"\">%(secret_published)s</span> ago"
+msgstr ""
+"%(secret_name)s 張貼於 <span class=\"date\" title=\"%(secret_published_abs)s"
+"\">%(secret_published)s</span> 之前"
+
+#: tmpl/secret_item.html:27
+msgid "Delete"
+msgstr "刪除"
+
+#: tmpl/secret_item.html:31
+msgid "Read more..."
+msgstr "閱讀全文"
+
+#: tmpl/secret_item.html:32
+msgid "View Comments"
+msgstr "閱讀意見"
+
+#: tmpl/terms.html:8
+msgid "Basic"
+msgstr "基本設定"
+
+#: tmpl/terms.html:10
+msgid "Do not abuse LSO."
+msgstr "勿濫用<b>說出您的秘密</b>。"
+
+#: tmpl/terms.html:11
+msgid "Accept any changes to the Terms without further notifications to you."
+msgstr ""
+
+#: tmpl/terms.html:14
+msgid "Disallowed Contents"
+msgstr "不允許的內容"
+
+#: tmpl/terms.html:15
+msgid "If you submit the following contents, those contents will be deleted."
+msgstr ""
+
+#: tmpl/terms.html:17
+msgid "Copyright infringement"
+msgstr ""
+
+#: tmpl/terms.html:18
+msgid "Promotion of dangerous and illegal activity"
+msgstr ""
+
+#: tmpl/terms.html:19
+msgid "Content facilitating phishing or account hijacking"
+msgstr ""
+
+#: tmpl/terms.html:20
+msgid "Commericial intentions"
+msgstr ""
+
+#: tmpl/terms.html:21
+msgid "Spams"
+msgstr ""
+
+#: tmpl/terms.html:24
+msgid "Submissions of Secrets"
+msgstr ""
+
+#: tmpl/terms.html:25
+msgid ""
+"Except the disallowed contents as described in previous section, you do not:"
+msgstr ""
+
+#: tmpl/terms.html:27
+msgid "Submit content into different language which does not belong to"
+msgstr ""
+
+#: tmpl/terms.html:30
+msgid "Copyright of Your Contents"
+msgstr ""
+
+#: tmpl/terms.html:31
+msgid ""
+"\n"
+"<p>You agree to put your contents to <a href=\"http://en.wikipedia.org/wiki/"
+"Public_domain\">Public Domain</a>.</p>\n"
+msgstr ""
+
+#: tmpl/post.html:4
+msgid "Post a secret"
+msgstr "張貼秘密"
+
+#: tmpl/post.html:12
+msgid ""
+"Make sure you have read <a href=\"/faq\">FAQ</a> and <a href=\"/terms"
+"\">Terms</a>,<br/> post a Secret relating to You,<br/> and it is <i>NOT</i> "
+"just for asking a Question."
+msgstr ""
+"在張貼前請閱讀<a href=\"/faq\">問與答</a>和<a href=\"/terms\">使用條款</a>。"
+"<br/>秘密必須與您個人有關且<i>不能</i>只問問題。"
+
+#: tmpl/post.html:63
+msgid "Separate with commas"
+msgstr "以逗號分隔"
+
+#: tmpl/post.html:77
+msgid "Preview"
+msgstr "預覽"
+
+#: tmpl/post.html:78
+msgid "Post!"
+msgstr "張貼！"
+
+#: tmpl/post.html:83
+msgid ""
+"Please write with care, you are not allowed to edit or to delete after "
+"posting."
+msgstr "請細心地撰寫，張貼後您無法編輯或刪除。"
+
+#: tmpl/post.html:84
+msgid ""
+"By clicking on the <i>Post!</i> button above means that you accept the <a "
+"href=\"/terms\">Terms</a>."
+msgstr ""
+"當您按下上方<i>張貼！</i>按鈕即表示您同意<a href=\"/terms\">使用條款</a>。"

@@ -4,7 +4,7 @@
 <h1><a href="/">{% trans "Let Secrets Out" %}</a></h1>
 </div>
 <div class="nav">
-<a href="/about">{% trans "Abort" %}</a>
+<a href="/about">{% trans "About" %}</a>
 <a href="/browse/{% ifin LANGUAGE_CODE config.KEYS_VALID_LANGUAGES %}{{ LANGUAGE_CODE }}/{% endifin %}">{% trans "Browse" %}</a>
 <a href="/tag/{% ifin LANGUAGE_CODE config.KEYS_VALID_LANGUAGES %}{{ LANGUAGE_CODE }}/{% endifin %}">{% trans "Tags" %}</a>
 <a class="highlight" href="{{ config.BASE_SECURE_URI }}post">{% trans "Post a Secret" %}</a>
