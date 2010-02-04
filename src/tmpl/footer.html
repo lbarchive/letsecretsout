@@ -1,7 +1,11 @@
 {% load i18n %}
+{% get_available_languages as LANGUAGES %}
 <div id="footer">
+<div id="language-setter">
+{% for lang in LANGUAGES %}<a href="{{ language_set_uri }}&language={{ lang.0 }}">{{ lang.1 }}</a>{% if not forloop.last %} &bull; {% endif %}{% endfor %}
+</div>
 <div class="nav">
-<a href="http://j.mp/4mQnVg">Chrome extension</a>
+<a href="http://j.mp/4mQnVg">{% trans "Chrome Extension" %}</a>
 </div>
 <div>
 <div>

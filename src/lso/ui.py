@@ -1,4 +1,5 @@
 import os
+import urllib
 
 from google.appengine.ext.webapp import template
 
@@ -27,6 +28,7 @@ def render_write(tmpl_values, tmpl_name, request=None, response=None):
       tmpl_values['reCAPTCHA_THEME'] = '<script type="text/javascript">var RecaptchaOptions = {theme: "blackglass"};</script>'
   
   tmpl_values['config'] = config
+  tmpl_values['language_set_uri'] = request.language_set_uri
 
   path = os.path.join(os.path.dirname(__file__), '../tmpl/' + tmpl_name)
   

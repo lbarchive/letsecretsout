@@ -30,7 +30,7 @@ function flag(secret_id) {
       $("a.flag").each(function(){
         var $ele = $(this)
         if ($ele.attr('href').indexOf("('" + json.id + "')") >= 0) {
-          $ele.replaceWith(json.message);
+          $ele.replaceWith('<span>' + json.message + '</span>');
           return false;
           }
         });
@@ -84,7 +84,9 @@ function init_disqus() {
   var query = '';
   var i = 0;
   $('a[href*="#disqus_thread"]').each(function(){
-    query += 'url' + i++ + '=' + encodeURIComponent(this.href.replace('https://', 'http://')) + '&';
+    var host = (window.location.host.indexOf('localhost') >= 0) ? 'localhost' : 'letsecretsout.appspot.com';
+    var thread_uri = this.href.replace('https://', 'http://').replace(window.location.host, host);
+    query += 'url' + i++ + '=' + encodeURIComponent(thread_uri) + '&';
     });
   if (query)
     $.getScript("http://disqus.com/forums/lso/get_num_replies.js?" + query);

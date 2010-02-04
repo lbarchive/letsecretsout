@@ -12,6 +12,7 @@ from google.appengine.api.urlfetch import fetch
 from google.appengine.ext import db
 from google.appengine.ext import webapp
 
+from django.conf import settings
 from django.utils import translation
 
 from lso.ui import render_write
@@ -145,8 +146,34 @@ class I18NRequestHandler(webapp.RequestHandler):
 
   def reset_language(self):
 
-    # Decide the language from Cookies/Headers
-    language = translation.get_language_from_request(self.request)
+    RE = re.compile(r'(.*?)\.?(localhost|%s\.appspot\.com)(:\d+)?' % self.request.environ['APPLICATION_ID']);
+    m = RE.match(self.request.host)
+
+    qs = urllib.urlencode([(key, value) for key, value in self.request.GET.items() if key != 'language'])
+    port = m.group(3) if m.group(3) else ''
+    if qs:
+      self.request.language_set_uri = '%s://%s%s%s?' % (self.request.scheme, m.group(2), port, self.request.path)
+    else:
+      self.request.language_set_uri = '%s://%s%s%s?%s' % (self.request.scheme, m.group(2), port, self.request.path, qs)
+    
+    # Check if there is a language setting from query
+    language = self.request.get('language', '').lower()
+    if language and language in dict(settings.LANGUAGES).keys():
+      self.request.COOKIES['django_language'] = language
+    elif m and m.group(1):
+      language = m.group(1)
+      # Do verification to see if it's a valid language to use, if not the user
+      # should be redirected.
+      if language not in dict(settings.LANGUAGES).keys():
+        # It's not in valid language for interface, redirect to default language
+        self.redirect('%s://%s.%s%s' % (self.request.scheme,
+            settings.LANGUAGE_CODE,
+            m.group(2), m.group(3)))
+        return
+    else:
+      # Decide the language from Cookies/Headers
+      language = translation.get_language_from_request(self.request)
+    
     translation.activate(language)
     self.request.LANGUAGE_CODE = translation.get_language()
 

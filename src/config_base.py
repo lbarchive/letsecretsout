@@ -59,8 +59,8 @@ VALID_LANGUAGES = (
     ('ja', '日本語'),
 #    ('ko', '한국어'),
 #    ('pt', 'Português'),
-    ('zh_CN', '简体中文'),
-    ('zh_TW', '繁體中文'),
+    ('zh-cn', '简体中文'),
+    ('zh-tw', '繁體中文'),
     )
 DICT_VALID_LANGUAGES = dict(VALID_LANGUAGES)
 KEYS_VALID_LANGUAGES = DICT_VALID_LANGUAGES.keys()

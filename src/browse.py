@@ -236,9 +236,9 @@ application = webapp.WSGIApplication([
     (r'/(\d+)', SecretPage),
     (r'/flag\.json', FlagJSON),
     ('/u/(.*)', UserPage),
-    ('/browse/?([a-zA-Z_]*)/?([0-9]*)/?', BrowsePage),
-    ('/tag/([a-zA-Z_]+)/?', TagCloudPage),
-    ('/tag/([a-zA-Z_]+)/([^/]+)/?([0-9]*)/?', TagPage),
+    ('/browse/?([a-z-]*)/?([0-9]*)/?', BrowsePage),
+    ('/tag/([a-z-]+)/?', TagCloudPage),
+    ('/tag/([a-z-]+)/([^/]+)/?([0-9]*)/?', TagPage),
     ],
     debug=config.DEBUG)
 
