@@ -65,6 +65,10 @@ pre {
 margin-bottom: 1em;
 }
 
+#footer .nav {
+margin-top: 1em;
+}
+
 .nav a {
   font-family: Serif;
   font-size: 12px;

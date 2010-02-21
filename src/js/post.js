@@ -68,14 +68,14 @@ function init_post() {
   for (var lang in langs)
     $('<option value="' + langs[lang] + '">' + prettify_lang_name(lang) + '</option>').appendTo($('#language'));
   */
-  $('#subject').keypress(function() {
+  $('#subject').keyup(function() {
       $('#subject-counter').text($(this).val().length);
       })
-      .keypress();
-  $('#story').keypress(function() {
+      .keyup();
+  $('#story').keyup(function() {
       $('#story-counter').text($(this).val().length);
       })
-      .keypress();
+      .keyup();
   }
 
 google.setOnLoadCallback(init_post);
