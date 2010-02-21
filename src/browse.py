@@ -139,18 +139,16 @@ class TagCloudPage(I18NRequestHandler):
   def get(self, language):
 
     if language and language == 'all':
-      #lang_path = 'all/'
-      #title = _('All')
-      render_write({}, 'not_implemented.html', self.request, self.response)
-      return
+      lang_path = 'all/'
+      title = _('All')
     elif language:
       if language not in config.DICT_VALID_LANGUAGES:
-        self.redirect('/browse')
+        self.redirect('/tag/all')
         return
       lang_path = language + '/'
       title = config.DICT_VALID_LANGUAGES[language]
     else:
-      self.redirect('/browse/all')
+      self.redirect('/tag/all')
       return
 
     q = Tag.all()
@@ -237,7 +235,7 @@ application = webapp.WSGIApplication([
     (r'/flag\.json', FlagJSON),
     ('/u/(.*)', UserPage),
     ('/browse/?([a-z-]*)/?([0-9]*)/?', BrowsePage),
-    ('/tag/([a-z-]+)/?', TagCloudPage),
+    ('/tag/([a-z-]*)/?', TagCloudPage),
     ('/tag/([a-z-]+)/([^/]+)/?([0-9]*)/?', TagPage),
     ],
     debug=config.DEBUG)
