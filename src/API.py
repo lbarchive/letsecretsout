@@ -105,7 +105,7 @@ class Feed(I18NRequestHandler):
 
 
 application = webapp.WSGIApplication([
-    ('/feed/?([a-zA-Z_]*)/?([^/]*)/?', Feed),
+    ('/feed/?([a-zA-Z-]*)/?([^/]*)/?', Feed),
     ('/random.json', RandomJSON),
     ],
     debug=config.DEBUG)
