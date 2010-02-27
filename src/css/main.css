@@ -215,7 +215,8 @@ width: 250px;
   border-radius: 5px;
   }
 
-.secret img.gravatar {
+.secret img.gravatar,
+.secret span.gravatar-hash {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
@@ -230,13 +231,14 @@ width: 250px;
   height: 48px;
   }
 
-.secret a.gravatar:hover img.gravatar {
-  border-color: #f88;
+.secret span.gravatar-hash {
+  background-color: #444;
+  border: 2px solid #ddd;
+  display: block;
   }
 
-.secret span.gravatar-hash {
-  visibility: hidden;
-  position: fixed;
+.secret a.gravatar:hover img.gravatar {
+  border-color: #f88;
   }
 
 .secret .subject a {
