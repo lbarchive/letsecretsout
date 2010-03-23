@@ -44,7 +44,7 @@ function preview_secret() {
       name: $('#name').val(), 
       gravatar: $('#gravatar').val(),
       gravatar_check: $('#gravatar_check').val(),
-      language: $('#language').val(),
+      secret_language: $('#language').val(),
       subject: $('#subject').val(),
       story: $('#story').val(),
       tags: $('#tags').val()
