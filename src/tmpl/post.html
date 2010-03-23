@@ -4,7 +4,7 @@
 {% block title %}{% trans "Post a secret" %}{% endblock %}
 
 {% block after_HEAD %}
-  <script src="/js/post.js?r=0" type="text/javascript"></script>
+  <script src="/js/post.js?r=1" type="text/javascript"></script>
 {{ reCAPTCHA_THEME }}
 {% endblock %}
 
@@ -37,7 +37,7 @@
 
 <div class="field">
 <div class="field-name">{% trans "Language" %}</div>
-<select id="language" name="language">
+<select id="language" name="secret_language">
 <option>Select</option>
 {% for lang in config.VALID_LANGUAGES %}
 <option value="{{ lang.0 }}"{% ifequal language lang.0 %} selected="selected"{% endifequal %}>{{ lang.1 }}</option>
